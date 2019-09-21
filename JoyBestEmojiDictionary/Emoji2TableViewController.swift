@@ -36,10 +36,10 @@ class Emoji2TableViewController: UITableViewController {
 
 
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
-            return emojis.count
+           return emojis.count
         } else {
             return 0
         }
@@ -49,13 +49,13 @@ class Emoji2TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EmojiCell", for: indexPath) as! EmojiTableViewCell
         let emoji = emojis[indexPath.row]
-       // cell.textLabel?.text = "\(emoji.symbol) - \(emoji.name)"
-        //cell.detailTextLabel?.text = emoji.description
+       //cell.textLabel?.text = "\(emoji.symbol) - \(emoji.name)"
+   //cell.detailTextLabel?.text = emoji.description
         cell.update(with: emoji)
         cell.showsReorderControl = true
         // Configure the cell...
         
-        return cell
+      return cell
     }
     //override func tableView(_ tableView:  UITableView, didSelectRowAt
       //  indexPath: IndexPath) {
@@ -131,11 +131,29 @@ class Emoji2TableViewController: UITableViewController {
     @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
     let tableViewEditingMode = tableView.isEditing
         tableView.setEditing(!tableViewEditingMode, animated: true)
-    
-    
     }
+    
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditEmoji" {
+            let indexPath = tableView.indexPathForSelectedRow!
+            let emoji = emojis[indexPath.row]
+            let navController = segue.destination as!
+            UINavigationController
+            let addEditEmojiTableViewController =
+            navController.topViewController as!
+            AddEditEmojiTableViewController
+            
+            addEditEmojiTableViewController.emoji = emoji
+        }
+    }
+    @IBAction func unwindtoend(unwindSegue: UIStoryboardSegue) {
+        
+    }
+    @IBAction func unwindsave(unwindSegue: UIStoryboardSegue) {
+        
+    }
 }

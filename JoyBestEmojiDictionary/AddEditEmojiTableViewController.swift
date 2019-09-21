@@ -9,10 +9,41 @@
 import UIKit
 
 class AddEditEmojiTableViewController: UITableViewController {
+    var emoji: Emoji?
+    
 
+    @IBOutlet weak var symbolTextField: UITextField!
+    
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
+    @IBOutlet weak var usageTextField: UITextField!
+    
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    func updateSaveButtonState() {
+        let symbolText = symbolTextField.text ?? ""
+        let nameText = nameTextField.text ?? ""
+        let descriptionText = descriptionTextField.text ?? ""
+        let usageText = usageTextField.text ?? ""
+        saveButton.isEnabled = !symbolText.isEmpty &&
+        !nameText.isEmpty && !descriptionText.isEmpty && !usageText.isEmpty
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let emoji = emoji {
+            symbolTextField.text = emoji.symbol
+            nameTextField.text = emoji.name
+            descriptionTextField.text = emoji.description
+            usageTextField.text = emoji.usage
+        }
+    updateSaveButtonState()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -20,16 +51,35 @@ class AddEditEmojiTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    @IBAction func textEditingChange(_ sender: UITextField) {
+        updateSaveButtonState()
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    @IBAction func nameEditingChanged(_ sender: UITextField) {
+          updateSaveButtonState()
+    }
+
+
+    @IBAction func descriptionEditingChanged(_ sender: UITextField) {
+          updateSaveButtonState()
+    }
+
+
+    @IBAction func usageEditingChanged(_ sender: UITextField) {
+          updateSaveButtonState()
+    }
+//
+    // MARK: - Table view data source
+
+   // override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+  //      return 0
+ //   }
+
+ //   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+ //       return 0
     }
 
     /*
@@ -87,4 +137,4 @@ class AddEditEmojiTableViewController: UITableViewController {
     }
     */
 
-}
+
