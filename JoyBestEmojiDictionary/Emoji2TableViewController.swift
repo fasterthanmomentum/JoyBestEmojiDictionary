@@ -29,10 +29,10 @@ class Emoji2TableViewController: UITableViewController {
     }
     // MARK: - Table view data source
 
-    //override func numberOfSections(in tableView: UITableView) -> Int {
+  //  override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-   //     return 0
-  //  }
+    //  return 0
+  //}
 
 
     
@@ -82,17 +82,17 @@ class Emoji2TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+   //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      //  if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
+    //        tableView.deleteRows(at: [indexPath], with: .fade)
+   //     } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+  //      }
+//    }
+    
 
     
     //Override to support rearranging the table view.
@@ -102,7 +102,7 @@ class Emoji2TableViewController: UITableViewController {
         tableView.reloadData()
 
     }
-
+ 
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -129,6 +129,8 @@ class Emoji2TableViewController: UITableViewController {
     
     
     }
-    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
 
 }
