@@ -32,4 +32,7 @@ class EmojiTableViewCell: UITableViewCell {
         nameLabel.text = emoji.name
         descriptionLabel.text = emoji.description
     }
+    
+    
+    
 }
