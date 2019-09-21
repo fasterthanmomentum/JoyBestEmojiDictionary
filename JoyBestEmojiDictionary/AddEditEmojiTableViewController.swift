@@ -18,7 +18,12 @@ class AddEditEmojiTableViewController: UITableViewController {
     @IBOutlet weak var nameTextField: UITextField!
     
     
+    
+    
     @IBOutlet weak var descriptionTextField: UITextField!
+    
+   
+    
     
     @IBOutlet weak var usageTextField: UITextField!
     
@@ -61,11 +66,15 @@ class AddEditEmojiTableViewController: UITableViewController {
     }
 
 
+  
     @IBAction func descriptionEditingChanged(_ sender: UITextField) {
           updateSaveButtonState()
     }
 
 
+
+
+    
     @IBAction func usageEditingChanged(_ sender: UITextField) {
           updateSaveButtonState()
     }
