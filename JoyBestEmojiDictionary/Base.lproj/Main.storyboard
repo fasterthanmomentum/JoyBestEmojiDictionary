@@ -24,6 +24,21 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e8O-Au-EbX" id="yA7-Bf-5QF">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1n1-zf-oxY">
+                                            <rect key="frame" x="20" y="11" width="374" height="22"/>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1n1-zf-oxY" firstAttribute="leading" secondItem="yA7-Bf-5QF" secondAttribute="leadingMargin" id="5BV-Jc-HXB"/>
+                                        <constraint firstItem="1n1-zf-oxY" firstAttribute="top" secondItem="yA7-Bf-5QF" secondAttribute="topMargin" id="7iI-KM-MUH"/>
+                                        <constraint firstItem="1n1-zf-oxY" firstAttribute="leading" secondItem="yA7-Bf-5QF" secondAttribute="leadingMargin" id="Rv0-1m-uzu"/>
+                                        <constraint firstItem="1n1-zf-oxY" firstAttribute="top" secondItem="yA7-Bf-5QF" secondAttribute="topMargin" id="TBi-vG-ber"/>
+                                        <constraint firstItem="1n1-zf-oxY" firstAttribute="bottom" secondItem="yA7-Bf-5QF" secondAttribute="bottomMargin" id="Uzn-vy-Wsl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1n1-zf-oxY" secondAttribute="trailing" id="aVg-HQ-89f"/>
+                                        <constraint firstItem="1n1-zf-oxY" firstAttribute="trailing" secondItem="yA7-Bf-5QF" secondAttribute="trailingMargin" id="e7l-Ve-cY2"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="1n1-zf-oxY" secondAttribute="bottom" id="xKb-Fi-uEA"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
